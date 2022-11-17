@@ -11,6 +11,7 @@ O uso de mock é mais relevante quando:
 - Se sabe anteriormente o resultado do teste.
 ## A Ferramenta Mockito
 ### O que é
+  Mockito é um framework de mocking baseado em java, usado em conjunto com outros frameworks de teste como JUnit e TestNG. Utiliza internamente a API Java Reflection e permite replicar objetos de um seviço. Um objeto mock retorna dados simulados evitando dependências externas. Ele simplifica o desenvolvimento de testes através da simulação de dependencias e aplica o mock no código sob teste.
 ### Cookbook
 ### Pacotes (imports)
 ### Anotações e cláusulas
