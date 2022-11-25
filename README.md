@@ -15,13 +15,13 @@ O uso de mock é mais relevante quando:
 ### Cookbook
 ### Pacotes (imports)
 ### Anotações e cláusulas
-  Há importantes implementações para o funcionamento do mockito, como a criação do mock de fato e a atribuição de valores a funções da classe do mock.
+  Há importantes implementações para o funcionamento do Mockito, como a criação do Mock de fato, a atribuição de valores a funções da classe do Mock e outras.
 
-- Criação do mock:
+- Criação do Mock:
     
       List mockList = Mock(List.class);
 
-- Atribuição de valor a função do mock:
+- Atribuição de valor a função do Mock:
 
       when(mockList.size()).thenReturn(10);
 
