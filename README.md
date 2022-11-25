@@ -31,21 +31,21 @@ O uso de mock é mais relevante quando:
 
 As anotações também são de estrema importancia no uso do mockito.
 
-- `@Mock`
+- *@Mock*
     
     Esta anotação tem como propósito facilitar a criação do mock, invés de utilizar a forma de criação descrita a cima utiliza-se a anotação.
 
       @Mock
       List mockList;
 
-- `@Spy`
+- *@Spy*
     
     Esta anotação funciona da mesma forma que o @Mock, mas cria uma classe Spy.
 
       @Spy
       List spyList;
 
-- `@Captor`
+- *@Captor*
     
     É usada para criar uma ArgumentCaptor instância que é usada para capturar os valores dos argumentos do método para outras asserções.
 
@@ -55,7 +55,7 @@ As anotações também são de estrema importancia no uso do mockito.
       @Captor
       ArgumentCaptor<Integer> valueCaptor;
 
-- `@InjectMocks`
+- *@InjectMocks*
 
     Com esta anotação uma classe real é criada, no entanto todos os seus objetos serão Mocks os quais serão criados por injeção de dependência se for possível.
     
