@@ -2,7 +2,7 @@
 
 ## Mocks
 ### O que são
-  Mock é o nome dado para o objeto que simula o comportamento das dependências de uma classe na realização de testes, substituindo-as quando se deseja testar um trecho de código separado do resto do sistema. 
+  Mock é uma classe dublê que simula o comportamento das dependências de uma classe na realização de testes, substituindo-as quando se deseja testar um trecho de código separado do resto do sistema. 
 ### Quando usar
 O uso de mock é mais relevante quando:
 - Se deseja realizar testes unitários;
@@ -15,6 +15,62 @@ O uso de mock é mais relevante quando:
 ### Cookbook
 ### Pacotes (imports)
 ### Anotações e cláusulas
+  Há importantes implementações para o funcionamento do mockito, como a criação do mock de fato e a atribuição de valores a funções da classe do mock.
+
+- Criação do mock:
+    
+      List mockList = Mock(List.class);
+
+- Atribuição de valor a função do mock:
+
+      when(mockList.size()).thenReturn(10);
+
+- Verificação se aquela função foi de fato chamada pela classe alvo de teste
+
+      verify(mockList).size();
+
+As anotações também são de estrema importancia no uso do mockito.
+
+- `@Mock`
+    
+    Esta anotação tem como propósito facilitar a criação do mock, invés de utilizar a forma de criação descrita a cima utiliza-se a anotação.
+
+      @Mock
+      List mockList;
+
+- `@Spy`
+    
+    Esta anotação funciona da mesma forma que o @Mock, mas cria uma classe Spy.
+
+      @Spy
+      List spyList;
+
+- `@Captor`
+    
+    É usada para criar uma ArgumentCaptor instância que é usada para capturar os valores dos argumentos do método para outras asserções.
+
+      @Captor
+      ArgumentCaptor<String> keyCaptor;
+      
+      @Captor
+      ArgumentCaptor<Integer> valueCaptor;
+
+- `@InjectMocks`
+
+    Com esta anotação uma classe real é criada, no entanto todos os seus objetos serão Mocks os quais serão criados por injeção de dependência se for possível.
+    
+      @InjectMocks
+      private PessoaService pessoaService;
+
 ### Exemplos
+
+
+  
 ### Testes Unitários e Mocks com Spring Rest Controller
+
+
+
+
+
+    
 -----------------------------------
