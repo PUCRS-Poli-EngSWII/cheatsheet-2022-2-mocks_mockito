@@ -97,6 +97,19 @@ As anotações também são de estrema importancia no uso do mockito.
   
 ### Testes Unitários e Mocks com Spring Rest Controller
 
+Os testes unitários servem para simular comportamentos de objetos reais (implementações realizadas no código).
+
+Mock é uma classe que simula os comportamentos de outra classe. Ele serve para cenários em que queremos testar as lógicas e os algoritmos de uma classe que tem dependência de outra classe, mas isolando essas dependências. Exemplo:
+
+```java
+@Test
+public class Idade(){
+	var nascimento = new DateTime(2000, 05, 10);
+	
+	Assert.Equal(idade == 22);
+}
+```
+
 
 
 
