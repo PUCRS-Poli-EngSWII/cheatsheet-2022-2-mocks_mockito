@@ -29,6 +29,14 @@ O uso de mock é mais relevante quando:
   [Mockito](https://site.mockito.org/) é um framework de mocking baseado em java, usado em conjunto com outros frameworks de teste como JUnit e TestNG. Utiliza internamente a API Java Reflection e permite replicar objetos de um seviço. Um objeto mock retorna dados simulados evitando dependências externas. Ele simplifica o desenvolvimento de testes através da simulação de dependencias e aplica o mock no código sob teste.
 ## Cookbook
 ### Pacotes (imports)
+ Segue abaixo alguns pacotes utilizado quando é implementado e testado um cookbook:
+ 
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import junit.framework.*;
+import static org.junit.jupiter.api.Assertions.*;
+```
+
 ### Anotações e cláusulas
   Há importantes implementações para o funcionamento do Mockito, como a criação do Mock de fato, a atribuição de valores a funções da classe do Mock e outras.
 
@@ -98,7 +106,7 @@ Exemplos de teste unitário:
 ```java
 @Test
 public void testAddBook(){
-	String isBook = mockedBookDAL.addBook(book1);
+	String isBook = mockedBook.addBook(book1);
 	assertNotNull(isBook);
 	assertEquals(book1.getIsbook(), isBook);
 }
