@@ -93,7 +93,25 @@ As anotações também são de estrema importancia no uso do mockito.
 
 ### Exemplos
 
+Exemplos de teste unitário:
 
+```java
+@Test
+public void testAddBook(){
+	String isBook = mockedBookDAL.addBook(book1);
+	assertNotNull(isBook);
+	assertEquals(book1.getIsbook(), isBook);
+}
+```
+
+```java
+@Test
+public void testUpdateBook(){
+	String isBook = mockedBook.updateBook(book1);
+	assertNotNull(isBook);
+	assertEquals(book1.getIsbook(), isBook);
+}
+```
   
 ### Testes Unitários e Mocks com Spring Rest Controller
 
@@ -101,14 +119,7 @@ Os testes unitários servem para simular comportamentos de objetos reais (implem
 
 Mock é uma classe que simula os comportamentos de outra classe. Ele serve para cenários em que queremos testar as lógicas e os algoritmos de uma classe que tem dependência de outra classe, mas isolando essas dependências. Exemplo:
 
-```java
-@Test
-public class Idade(){
-	var nascimento = new DateTime(2000, 05, 10);
-	
-	Assert.Equal(idade == 22);
-}
-```
+
 
 
 
