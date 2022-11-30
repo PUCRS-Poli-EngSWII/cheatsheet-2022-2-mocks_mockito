@@ -170,16 +170,16 @@ void shouldFetchAllUsers() throws Exception {
 ```java
 @Test
 void shouldCreateNewUser() throws Exception {
-		given(userService.createUser(any(User.Class))).willAnswer((invocation) -> invocation.getArgument(0));
+	given(userService.createUser(any(User.Class))).willAnswer((invocation) -> invocation.getArgument(0));
 	User user = new User(null, "newUserl@gmail.com","pwd", "Name");
 	
-this.mockMvc.perform(post("/api/users"))
-	.contentType(MediaType.APPLICATION_JSON_UTF8)
-	.content(objectMapper.writeValueAsString(user))
-	.andExpect(status().isCreated())
-	.andExpect(jsonPath("$.email",is(user.getEmail())))
-	.andExpect(jsonPath("$.passowrd", is(user.getPassword())))
-	.andExpect(jsonPath("$.name", is(user.getName())));
+	this.mockMvc.perform(post("/api/users"))
+		.contentType(MediaType.APPLICATION_JSON_UTF8)
+		.content(objectMapper.writeValueAsString(user))
+		.andExpect(status().isCreated())
+		.andExpect(jsonPath("$.email",is(user.getEmail())))
+		.andExpect(jsonPath("$.passowrd", is(user.getPassword())))
+		.andExpect(jsonPath("$.name", is(user.getName())));
 	
 }
 ```
