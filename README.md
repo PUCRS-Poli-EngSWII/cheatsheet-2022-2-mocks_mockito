@@ -133,9 +133,56 @@ Um exemplo que podemos utilizar é a execução de testes para uma classe Rest C
 
 
 
+```java
+@WebMvcTest(controllers = UserController.class)
+@ActiveProfiles("test")
+class UserControllerTest {
+   
+    @Autowired                           
+    private MockMvc mockMvc;  
+                                                 
+    @MockBean                           
+    private UserService userService; 
+                                               
+    private List<User> userList;       
+                                            
+    @BeforeEach                           
+    void setUp() {                               
+       this.userList = new ArrayList<>();   
+       this.userList.add(new User(1L, "user1@gmail.com", "pwd1","User1")); 
+       this.userList.add(new User(2L, "user2@gmail.com", "pwd2","User2"));
+       this.userList.add(new User(3L, "user3@gmail.com", "pwd3","User3"));                                                       
+    }
+}
+```
 
+```java
+@Test
+void shouldFetchAllUsers() throws Exception {
+	given(userService.findAllUsers()).willReturn(userList);
+	
+	this.mockMvc.perform(get("/api/users"))
+		.andExpect(status().isOk())
+		.andExpect(jsonPath("$.size()",is(userList.size())));
+}
+```
 
-
+```java
+@Test
+void shouldCreateNewUser() throws Exception {
+		given(userService.createUser(any(User.Class))).willAnswer((invocation) -> invocation.getArgument(0));
+	User user = new User(null, "newUserl@gmail.com","pwd", "Name");
+	
+this.mockMvc.perform(post("/api/users"))
+	.contentType(MediaType.APPLICATION_JSON_UTF8)
+	.content(objectMapper.writeValueAsString(user))
+	.andExpect(status().isCreated())
+	.andExpect(jsonPath("$.email",is(user.getEmail())))
+	.andExpect(jsonPath("$.passowrd", is(user.getPassword())))
+	.andExpect(jsonPath("$.name", is(user.getName())));
+	
+}
+```
 
 
 
