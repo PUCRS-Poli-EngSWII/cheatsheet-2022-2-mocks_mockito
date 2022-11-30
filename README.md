@@ -125,7 +125,13 @@ public void testUpdateBook(){
 
 Os testes unitários servem para simular comportamentos de objetos reais (implementações realizadas no código).
 
-Mock é uma classe que simula os comportamentos de outra classe. Ele serve para cenários em que queremos testar as lógicas e os algoritmos de uma classe que tem dependência de outra classe, mas isolando essas dependências. Exemplo:
+Mock é uma classe que simula os comportamentos de outra classe. Ele serve para cenários em que queremos testar as lógicas e os algoritmos de uma classe que tem dependência de outra classe, mas isolando essas dependências.
+
+Uma boa utilização para os Mocks é a realização de testes em Rest Controllers, os quais podemos testar a execução do endpoint mascarando as dependências de conexão.
+
+Um exemplo que podemos utilizar é a execução de testes para uma classe Rest Controller chamada UserController.
+
+
 
 
 
