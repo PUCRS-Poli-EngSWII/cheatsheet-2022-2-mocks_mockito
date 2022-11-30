@@ -186,8 +186,8 @@ void shouldCreateNewUser() throws Exception {
 Exemplo retirado de: (https://medium.com/backend-habit/integrate-junit-and-mockito-unit-testing-for-controller-layer-91bb4099c2a5)
 
 
-Com o  *@WebMvcTest* usamos para mockar as conexões e com isso não precisamos subir todo o contexto da aplicação e nem utilizar as conexões que diretamente do web server real
+Com o  *@WebMvcTest* usamos para mockar as conexões e com isso não precisamos subir todo o contexto da aplicação e nem utilizar as conexões que diretamente do web server real.
 
-Com o `this.mockMvc.perform(get("/api/users"))` podemos fazer uma requesição do tipo *get* ao controller e trocando o *get* por *post* podemos mandar um requesição do tipo *post* e enviar um body também
+Com o `this.mockMvc.perform(get("/api/users"))` podemos fazer uma requesição do tipo *get* ao controller e trocando o *get* por *post* podemos mandar um requesição do tipo *post* e enviar um body também.
     
 -----------------------------------
